@@ -1,1 +1,267 @@
-init
+{ "fields": [
+
+{
+	"name": "Type",
+	"description": "Defined as either 'equipment' or 'facility'.",
+	"constraints": {
+		"required": false,
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"pattern": "(equipment|facility)"
+	}
+},
+
+{
+	"name": "ID",
+	"description": "An institution assigned unique ID (e.g. Asset ID). If required you may make this one-way encrypted (e.g. MD5 Hash)",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"unique": true, 
+		"required": false
+	}
+},
+
+{
+	"name": "Name",
+	"description": "The name of the facility or equipment. Name or description must be set.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Description",
+	"description": "A description of the facility or equipment. Name or description must be set.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Related Facility ID",
+	"description": "Must be unset if type=Facility. If type=Equipment then this is the ID of a facility listed in this document which the equipment is part of. If an item of equipment is related to multiple facilities, multiple values may be specified separated by a mandatory comma “,” and optional whitespace (e.g. F0001, F0002).",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Technique",
+	"description": "Free text description of research discipline/field (e.g. Spectroscopy).",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+{
+	"name": "Technique:cpv",
+	"description": "Value from CPV terms.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+{
+	"name": "Technique:N8",
+	"description": "Value from N8 terms.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Department",
+	"description": "Organisational unit, school or research group which owns the facility (if appropriate).",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Site Location",
+	"description": "Campus or site location of building where the facility or equipment is located.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Building",
+	"description": "Name or reference number of the building where the equipment or facility is based.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Location",
+	"description": "The URL of a Wikipedia page for the city/town/borough in which the facility is in or near.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#anyURI",
+		"required": false,
+		"pattern": "https://en\\.wikipedia\\.org/wiki/.*"
+	}
+},
+
+{
+	"name": "Contact Name",
+	"description": "Contact name required along with at least one form of contact",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Contact Telephone",
+	"description": "A contact telephone number, with an optional text prefix (e.g. tel:) to make data input into spreadsheets easier.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Contact URL",
+	"description": "The URL of a web page containing contact information.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#anyURI",
+		"required": false
+	}
+},
+
+{
+	"name": "Contact Email",
+	"description": "A contact email address.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Secondary Contact Name",
+	"description": "Secondary contact name if required. This must include at least one form of contact.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Secondary Contact Telephone",
+	"description": "A contact telephone number, with an optional text prefix (e.g. tel:) to make data input into spreadsheets easier.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Secondary Contact URL",
+	"description": "The URL of a web page containing contact information.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#anyURI",
+		"required": false
+	}
+},
+
+{
+	"name": "Secondary Contact Email",
+	"description": "A contact email address.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Photo",
+	"description": "The URL of a publicly accessible photograph of the facility (e.g. png, jpeg, gif).",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#anyURI",
+		"required": false
+	}
+},
+
+{
+	"name": "Service Level",
+	"description": "Details of support available for the use of this facility or equipment.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Web Address",
+	"description": "The URL of a web page giving information about the facility or equipment.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#anyURI",
+		"required": false
+	}
+},
+
+{
+	"name": "Institution Name",
+	"description": "The name of the institution that owns the facility.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"required": false
+	}
+},
+
+{
+	"name": "Institution URL",
+	"description": "The homepage of the institution that owns the facility.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#anyURI",
+		"required": false
+	}
+},
+
+{
+	"name": "Institution Logo URL",
+	"description": "The URL for a publicly accessible logo for the institution.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#anyURI",
+		"required": false
+	}
+},
+
+{
+	"name": "Datestamp",
+	"description": "The date on which the data were submitted. An indication of how ‘fresh’ the facility record is.",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#dateTime",
+		"required": false
+	}
+},
+
+{
+	"name": "Approximate Coordinates",
+	"description": "The Approximate Latitude and Longitude, if available. Writen with a space between them, eg. '51.060556 -1.313056'",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#string",
+		"pattern": "-?[0-9]+(\\.[0-9]+)? -?[0-9]+(\\.[0-9]+)?",
+		"required": false
+	}
+},
+
+{
+	"name": "Corrections",
+	"description": "A URL to request corrections to this record. May be an email address in which case it should start with mailto:",
+	"constraints": {
+		"type": "http://www.w3.org/2001/XMLSchema#anyURI",
+		"required": false
+	}
+}
+
+]}
+
